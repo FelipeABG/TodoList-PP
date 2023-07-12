@@ -28,14 +28,14 @@ function addItens(){
 
 function renderTodoList(){
     let allElements = ''
-    for (let i = 0; i < todoObjectList.length; i++) {
+    todoObjectList.forEach((object, index) => {
         let html = `
-            <p class="item-paragraph">${todoObjectList[i].name}</p>
-            <p class="date-paragraph">${todoObjectList[i].date}</p>
-            <button class="delete-button" onclick="deleteItens(${i})">Delete</button>
+        <p class="item-paragraph">${object.name}</p>
+        <p class="date-paragraph">${object.date}</p>
+        <button class="delete-button" onclick="deleteItens(${index})">Delete</button>
         `
         allElements += html
-    }   
+    })
     todoContainer.innerHTML = allElements
 }
 
