@@ -21,6 +21,6 @@ Made by Felipe Augusto
 
 ---
 
-#### [Live Server](https://felipeabg.github.io/TodoList-PP/)
+#### [Live Server](https://felipeabg.github.io/todo-list)
 
  
