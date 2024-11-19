@@ -1,5 +1,4 @@
 import UI from "./ui";
-
 import sideBarIcon from "../img/siderbar.svg";
 
 export default class {

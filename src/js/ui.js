@@ -27,14 +27,18 @@ export default class {
   static toggleSideBar() {
     const sidebar = document.querySelector(".side-bar-container");
     const main = document.querySelector(".main-container");
+    const button = document.querySelector(".toggle-side-bar-button");
+    console.log(sidebar.style.width);
 
-    if (sidebar.style.width == "20%") {
-      sidebar.style.width = "0%";
-      main.style.width = "100%";
+    if (sidebar.style.width == "0%") {
+      sidebar.style.width = "20%";
+      main.style.width = "80%";
+      button.style.left = "16%";
       return;
     }
 
-    sidebar.style.width = "20%";
-    main.style.width = "80%";
+    sidebar.style.width = "0%";
+    main.style.width = "100%";
+    button.style.left = "2%";
   }
 }

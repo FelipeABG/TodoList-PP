@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter-font.ttf");
+}
+
+:root {
+  font-family: "Inter";
+}
+
 body,
 html {
   margin: 0;
@@ -12,7 +21,7 @@ html {
 }
 
 .side-bar-container {
-  width: 0;
+  width: 20%;
   height: 100%;
   border-right: 0.5px solid #323377;
   background-color: #f6f7f9;
@@ -21,7 +30,7 @@ html {
 }
 
 .main-container {
-  width: 100%;
+  width: 80%;
   height: 100%;
   transition: 0.2s;
 }
@@ -29,7 +38,12 @@ html {
 .toggle-side-bar-button {
   position: fixed;
   width: 25px;
-  left: 30px;
-  top: 20px;
+  left: 16%;
+  top: 25px;
   transition: 0.2s;
+}
+
+.toggle-side-bar-button:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
 }
