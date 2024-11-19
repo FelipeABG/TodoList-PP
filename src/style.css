@@ -23,3 +23,11 @@ html {
   height: 100%;
   transition: 0.2s;
 }
+
+.toggle-side-bar-button {
+  position: fixed;
+  width: 25px;
+  left: 30px;
+  top: 20px;
+  transition: 0.2s;
+}

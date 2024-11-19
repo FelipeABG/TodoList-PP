@@ -17,6 +17,11 @@ export default function (tag) {
       return this;
     },
 
+    source(path) {
+      this.element.src = path;
+      return this;
+    },
+
     build() {
       return this.element;
     },

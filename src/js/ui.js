@@ -16,13 +16,25 @@ export default class {
     return todoDiv;
   }
 
-  static showSideBar() {
-    document.querySelector(".side-bar-container").style.width = "20%";
-    document.querySelector(".main-container").style.width = "80%";
+  static createImage(image, className) {
+    return create("img").class(className).source(image).build();
   }
 
-  static hideSideBar() {
-    document.querySelector(".side-bar-container").style.width = "0%";
-    document.querySelector(".main-container").style.width = "100%";
+  static appendTo(parent, ...e) {
+    document.querySelector(parent).append(...e);
+  }
+
+  static toggleSideBar() {
+    const sidebar = document.querySelector(".side-bar-container");
+    const main = document.querySelector(".main-container");
+
+    if (sidebar.style.width == "20%") {
+      sidebar.style.width = "0%";
+      main.style.width = "100%";
+      return;
+    }
+
+    sidebar.style.width = "20%";
+    main.style.width = "80%";
   }
 }

@@ -1,17 +1,17 @@
 import UI from "./ui";
 
+import sideBarIcon from "../img/siderbar.svg";
+
 export default class {
   static build() {
-    this.#addSideBarBehavior();
+    this.#addSideBarAccess();
   }
 
-  static #addSideBarBehavior() {
-    document
-      .querySelector(".open-side-bar-button")
-      .addEventListener("click", () => UI.showSideBar());
+  static #addSideBarAccess() {
+    UI.appendTo("body", UI.createImage(sideBarIcon, "toggle-side-bar-button"));
 
     document
-      .querySelector(".close-side-bar-button")
-      .addEventListener("click", () => UI.hideSideBar());
+      .querySelector(".toggle-side-bar-button")
+      .addEventListener("click", () => UI.toggleSideBar());
   }
 }
