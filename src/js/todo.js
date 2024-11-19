@@ -1,9 +1,26 @@
+import UI from "./ui.js";
+
 export default class {
   constructor(title, description, dueDate, priority) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+  }
+
+  intoNode() {
+    const todoDiv = create("div").class("todo").build();
+
+    this.#attrIter().forEach((attr) => {
+      const node = UI.create("div")
+        .class("todo-" + attr.name)
+        .content(attr.data)
+        .build();
+
+      todoDiv.appendChild(node);
+    });
+
+    return todoDiv;
   }
 
   #attrIter() {
@@ -13,20 +30,5 @@ export default class {
       { name: "dueDate", data: this.dueDate },
       { name: "priority", data: this.priority },
     ];
-  }
-
-  intoNode() {
-    const todoDiv = create("div").class("todo").build();
-
-    this.#attrIter().forEach((attr) => {
-      const node = create("div")
-        .class("todo-" + attr.name)
-        .content(attr.data)
-        .build();
-
-      todoDiv.appendChild(node);
-    });
-
-    return todoDiv;
   }
 }

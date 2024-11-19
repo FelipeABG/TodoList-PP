@@ -1,12 +1,6 @@
-import create from "./fluent.js";
-
 export default class {
   static createImage(image, className) {
-    return create("img").class(className).source(image).build();
-  }
-
-  static appendTo(parent, ...e) {
-    document.querySelector(parent).append(...e);
+    return this.create("img").class(className).source(image).build();
   }
 
   static toggleSideBar() {
@@ -24,5 +18,35 @@ export default class {
     sidebar.style.width = "0%";
     main.style.width = "100%";
     button.style.left = "2%";
+  }
+
+  static create(tag) {
+    return {
+      element: document.createElement(tag),
+
+      class(...classes) {
+        this.element.classList.add(...classes);
+        return this;
+      },
+
+      content(str) {
+        this.element.innerText = str;
+        return this;
+      },
+
+      child(...children) {
+        this.element.append(...children);
+        return this;
+      },
+
+      source(path) {
+        this.element.src = path;
+        return this;
+      },
+
+      build() {
+        return this.element;
+      },
+    };
   }
 }
