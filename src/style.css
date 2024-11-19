@@ -7,12 +7,14 @@ html {
   flex-direction: row;
   width: 100%;
   height: 100%;
+  background-image: url("./img/background.svg");
+  background-size: 100% 100%;
 }
 
 .side-bar-container {
   width: 0;
   height: 100%;
-  border-right: 0.5px solid gray;
+  border-right: 0.5px solid #323377;
   background-color: #f6f7f9;
   transition: 0.2s;
   overflow: hidden;
