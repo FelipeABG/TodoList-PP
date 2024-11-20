@@ -32,7 +32,7 @@ html {
 }
 
 .profile-container {
-  height: 9%;
+  height: 8.5%;
   display: flex;
   align-items: center;
   padding-left: 20px;
@@ -44,6 +44,11 @@ html {
 .profile-icon {
   width: 30px;
   border: 2px solid #505690;
+  border-radius: 100px;
+}
+
+.profile-arrow:hover {
+  background-color: #d3d3d3;
   border-radius: 100px;
 }
 
@@ -65,7 +70,16 @@ html {
   transition: 0.2s;
 }
 
-.toggle-side-bar-button:hover {
+.notification-button {
+  position: fixed;
+  width: 30px;
+  left: 13%;
+  top: 24px;
   transition: 0.2s;
+}
+
+.toggle-side-bar-button:hover,
+.notification-button:hover {
+  transition: 0.1s;
   transform: scale(1.1);
 }

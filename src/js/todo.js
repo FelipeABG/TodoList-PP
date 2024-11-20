@@ -1,4 +1,4 @@
-import UI from "./ui.js";
+import { create } from "./ui.js";
 
 export default class {
   constructor(title, description, dueDate, priority) {
@@ -12,7 +12,7 @@ export default class {
     const todoDiv = create("div").class("todo").build();
 
     this.#attrIter().forEach((attr) => {
-      const node = UI.create("div")
+      const node = create("div")
         .class("todo-" + attr.name)
         .content(attr.data)
         .build();
