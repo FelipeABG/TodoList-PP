@@ -5,13 +5,15 @@
 
 :root {
   font-family: "Inter";
+  --dark-blue: #323377;
+  --dark-gray: #8e8c8a;
+  --light-blue: #a9beda;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -21,14 +23,16 @@ html {
 }
 
 .side-bar-container {
+  box-sizing: border-box;
   width: 20%;
   height: 100%;
-  border-right: 0.5px solid #323377;
+  border-right: 0.5px solid var(--dark-blue);
   background-color: #f6f7f9;
   transition: 0.2s;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
 .profile-container {
@@ -53,7 +57,58 @@ html {
 }
 
 .buttons-container {
-  height: 60%;
+  box-sizing: border-box;
+  height: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-bar-button {
+  cursor: default;
+  box-sizing: border-box;
+  flex: 1;
+  gap: 3px;
+  width: 97%;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  color: var(--dark-gray);
+}
+
+.side-bar-button:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
+
+.side-bar-button:hover .button-icon {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(9%) saturate(4446%)
+    hue-rotate(200deg) brightness(104%) contrast(96%);
+}
+
+.button-text {
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.add-text {
+  color: var(--dark-blue);
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.add-icon {
+  width: 1.8rem;
+}
+
+.button-icon {
+  width: 1.7rem;
 }
 
 .main-container {
@@ -64,16 +119,16 @@ html {
 
 .toggle-side-bar-button {
   position: fixed;
-  width: 1.6rem;
-  left: 16%;
+  width: 1.4rem;
+  left: 18%;
   top: 25px;
   transition: 0.2s;
 }
 
 .notification-button {
   position: fixed;
-  width: 1.6rem;
-  left: 13%;
+  width: 1.5rem;
+  left: 16%;
   top: 24px;
   transition: 0.2s;
 }

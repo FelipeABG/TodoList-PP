@@ -2,6 +2,11 @@ import sideBarIcon from "../img/siderbar.svg";
 import profileIcon from "../img/profile.svg";
 import profileArrow from "../img/downarrow.svg";
 import notificationIcon from "../img/notification.svg";
+import addIcon from "../img/plus.svg";
+import searchIcon from "../img/search.svg";
+import inboxIcon from "../img/inbox.svg";
+import calendarIcon from "../img/calendar.svg";
+import filterIcon from "../img/filter.svg";
 
 class UI {
   static toggleSideBar() {
@@ -13,15 +18,15 @@ class UI {
     if (sidebar.style.width == "0%") {
       sidebar.style.width = "20%";
       main.style.width = "80%";
-      sideBarbutton.style.left = "16%";
-      notificationButton.style.left = "13%";
+      sideBarbutton.style.left = "18%";
+      notificationButton.style.left = "16%";
       return;
     }
 
     sidebar.style.width = "0%";
     main.style.width = "100%";
     sideBarbutton.style.left = "2%";
-    notificationButton.style.left = "5%";
+    notificationButton.style.left = "4%";
   }
 
   static renderImages() {
@@ -29,6 +34,11 @@ class UI {
     document.querySelector(".profile-icon").src = profileIcon;
     document.querySelector(".profile-arrow").src = profileArrow;
     document.querySelector(".notification-button").src = notificationIcon;
+    document.querySelector(".add-icon").src = addIcon;
+    document.querySelector(".search-icon").src = searchIcon;
+    document.querySelector(".inbox-icon").src = inboxIcon;
+    document.querySelector(".today-icon").src = calendarIcon;
+    document.querySelector(".filter-icon").src = filterIcon;
   }
 }
 
