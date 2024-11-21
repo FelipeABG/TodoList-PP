@@ -61,5 +61,9 @@ export default class {
     buttons.forEach((button) => {
       buttonContainer.appendChild(button.intoDiv());
     });
+
+    document
+      .querySelector(".side-bar-button")
+      .lastChild.classList.add("add-text");
   }
 }
