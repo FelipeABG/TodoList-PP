@@ -1,8 +1,7 @@
-import { UI } from "./ui";
+import UI from "./ui";
 
 export default class {
   static build() {
-    UI.renderImages();
     this.#addSideBarAccess();
   }
 

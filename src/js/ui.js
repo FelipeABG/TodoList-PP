@@ -8,7 +8,14 @@ import inboxIcon from "../img/inbox.svg";
 import calendarIcon from "../img/calendar.svg";
 import filterIcon from "../img/filter.svg";
 
-class UI {
+import Button from "./button.js";
+
+export default class {
+  static render() {
+    this.#renderSideBarButtons();
+    this.#renderImages();
+  }
+
   static toggleSideBar() {
     const sidebar = document.querySelector(".side-bar-container");
     const main = document.querySelector(".main-container");
@@ -29,7 +36,7 @@ class UI {
     notificationButton.style.left = "4%";
   }
 
-  static renderImages() {
+  static #renderImages() {
     document.querySelector(".toggle-side-bar-button").src = sideBarIcon;
     document.querySelector(".profile-icon").src = profileIcon;
     document.querySelector(".profile-arrow").src = profileArrow;
@@ -40,36 +47,19 @@ class UI {
     document.querySelector(".today-icon").src = calendarIcon;
     document.querySelector(".filter-icon").src = filterIcon;
   }
+
+  static #renderSideBarButtons() {
+    const buttonContainer = document.querySelector(".buttons-container");
+    const buttons = [
+      new Button("add-icon", "Add Task"),
+      new Button("inbox-icon", "Inbox"),
+      new Button("today-icon", "Today"),
+      new Button("filter-icon", "Filter & Labels"),
+      new Button("search-icon", "Search"),
+    ];
+
+    buttons.forEach((button) => {
+      buttonContainer.appendChild(button.intoDiv());
+    });
+  }
 }
-
-function create(tag) {
-  return {
-    element: document.createElement(tag),
-
-    class(...classes) {
-      this.element.classList.add(...classes);
-      return this;
-    },
-
-    content(str) {
-      this.element.innerText = str;
-      return this;
-    },
-
-    child(...children) {
-      this.element.append(...children);
-      return this;
-    },
-
-    source(path) {
-      this.element.src = path;
-      return this;
-    },
-
-    build() {
-      return this.element;
-    },
-  };
-}
-
-export { UI, create };
