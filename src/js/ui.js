@@ -9,61 +9,83 @@ import calendarIcon from "../img/calendar.svg";
 import filterIcon from "../img/filter.svg";
 
 import Button from "./button.js";
+import { create } from "./node.js";
 
 export default class {
   static render() {
     this.#renderSideBarButtons();
-    this.#renderImages();
+    this.#renderSideBarProfile();
   }
 
   static toggleSideBar() {
     const sidebar = document.querySelector(".side-bar-container");
     const main = document.querySelector(".main-container");
-    const sideBarbutton = document.querySelector(".toggle-side-bar-button");
+    const sideBarButton = document.querySelector(".toggle-side-bar-button");
     const notificationButton = document.querySelector(".notification-button");
 
     if (sidebar.style.width == "0%") {
       sidebar.style.width = "20%";
       main.style.width = "80%";
-      sideBarbutton.style.left = "18%";
+      sideBarButton.style.left = "18%";
       notificationButton.style.left = "16%";
       return;
     }
 
     sidebar.style.width = "0%";
     main.style.width = "100%";
-    sideBarbutton.style.left = "2%";
+    sideBarButton.style.left = "2%";
     notificationButton.style.left = "4%";
   }
 
-  static #renderImages() {
-    document.querySelector(".toggle-side-bar-button").src = sideBarIcon;
-    document.querySelector(".profile-icon").src = profileIcon;
-    document.querySelector(".profile-arrow").src = profileArrow;
-    document.querySelector(".notification-button").src = notificationIcon;
-    document.querySelector(".add-icon").src = addIcon;
-    document.querySelector(".search-icon").src = searchIcon;
-    document.querySelector(".inbox-icon").src = inboxIcon;
-    document.querySelector(".today-icon").src = calendarIcon;
-    document.querySelector(".filter-icon").src = filterIcon;
+  static #renderSideBarProfile() {
+    const container = document.querySelector(".profile-container");
+
+    const profileImg = create("img")
+      .class("profile-icon")
+      .source(profileIcon)
+      .build();
+
+    const text = create("p").content("Felipe").build();
+
+    const arrowImg = create("img")
+      .class("profile-arrow")
+      .source(profileArrow)
+      .build();
+
+    container.append(profileImg, text, arrowImg);
   }
 
   static #renderSideBarButtons() {
     const buttonContainer = document.querySelector(".buttons-container");
+    const body = document.querySelector("body");
+
     const buttons = [
-      new Button("add-icon", "Add Task"),
-      new Button("inbox-icon", "Inbox"),
-      new Button("today-icon", "Today"),
-      new Button("filter-icon", "Filter & Labels"),
-      new Button("search-icon", "Search"),
+      new Button("add-icon", "Add Task", addIcon),
+      new Button("inbox-icon", "Inbox", inboxIcon),
+      new Button("today-icon", "Today", calendarIcon),
+      new Button("filter-icon", "Filter & Labels", filterIcon),
+      new Button("search-icon", "Search", searchIcon),
     ];
 
     buttons.forEach((button) => {
       buttonContainer.appendChild(button.intoDiv());
     });
 
+    //The add task button has different styles
     document
       .querySelector(".side-bar-button")
       .lastChild.classList.add("add-text");
+
+    //Adding access to the side bar
+    const sideBarButton = create("img")
+      .class("toggle-side-bar-button")
+      .source(sideBarIcon)
+      .build();
+    const notificationButton = create("img")
+      .class("notification-button")
+      .source(notificationIcon)
+      .build();
+
+    body.append(sideBarButton, notificationButton);
   }
 }
