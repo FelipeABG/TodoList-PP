@@ -6,8 +6,10 @@
 :root {
   font-family: "Inter";
   --dark-blue: #323377;
-  --dark-gray: #8e8c8a;
+  --dark-gray: #6b6967;
   --light-blue: #a9beda;
+  --light-black: #2a2826;
+  --buttons-width: 97%;
 }
 
 body,
@@ -29,7 +31,8 @@ html {
   border-right: 0.5px solid var(--dark-blue);
   background-color: #f6f7f9;
   transition: 0.2s;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -69,13 +72,13 @@ html {
   box-sizing: border-box;
   flex: 1;
   gap: 3px;
-  width: 97%;
+  width: var(--buttons-width);
   padding-left: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   border-radius: 10px;
-  color: var(--dark-gray);
+  color: var(--light-black);
 }
 
 .side-bar-button:hover {
@@ -115,17 +118,11 @@ html {
   width: 1.6rem;
 }
 
-.main-container {
-  width: 80%;
-  height: 100%;
-  transition: 0.2s;
-}
-
 .toggle-side-bar-button {
   position: fixed;
   width: 1.4rem;
   left: 18%;
-  top: 25px;
+  top: 2.6vh;
   transition: 0.2s;
 }
 
@@ -133,7 +130,7 @@ html {
   position: fixed;
   width: 1.5rem;
   left: 16%;
-  top: 24px;
+  top: 2.6vh;
   transition: 0.2s;
 }
 
@@ -141,4 +138,68 @@ html {
 .notification-button:hover {
   transition: 0.1s;
   transform: scale(1.1);
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 67%;
+  overflow: scroll;
+  gap: 30px;
+  cursor: default;
+}
+
+.project {
+  width: var(--buttons-width);
+  height: 10vh;
+  flex-shrink: 0;
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  flex: 1;
+  box-sizing: border-box;
+  gap: 3px;
+  display: flex;
+  padding-left: 3px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-mini {
+  flex: 1;
+  display: flex;
+  gap: 3px;
+  padding-left: 3px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title-container p,
+.task-mini p {
+  padding: 0;
+  margin: 0;
+}
+
+.title-img {
+  width: 1.6rem;
+}
+
+.task-img {
+  width: 1.4rem;
+}
+
+.title-container p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+}
+
+.main-container {
+  width: 80%;
+  height: 100%;
+  transition: 0.2s;
 }

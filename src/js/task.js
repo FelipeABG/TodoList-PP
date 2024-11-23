@@ -1,4 +1,5 @@
-import { create } from "./ui.js";
+import { create } from "./node.js";
+import hashtagIcon from "../img/hashtag.svg";
 
 export default class {
   constructor(title, description, dueDate, priority) {
@@ -9,18 +10,28 @@ export default class {
   }
 
   intoNode() {
-    const todoDiv = create("div").class("todo").build();
+    const taskDiv = create("div").class("task").build();
 
     this.#attrIter().forEach((attr) => {
       const node = create("div")
-        .class("todo-" + attr.name)
+        .class("task-" + attr.name)
         .content(attr.data)
         .build();
 
-      todoDiv.appendChild(node);
+      taskDiv.appendChild(node);
     });
 
-    return todoDiv;
+    return taskDiv;
+  }
+
+  intoMiniNode() {
+    return create("div")
+      .class("task-mini")
+      .child(
+        create("img").class("task-img").source(hashtagIcon).build(),
+        create("p").content(this.title).build(),
+      )
+      .build();
   }
 
   #attrIter() {

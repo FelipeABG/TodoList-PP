@@ -7,14 +7,16 @@ import searchIcon from "../img/search.svg";
 import inboxIcon from "../img/inbox.svg";
 import calendarIcon from "../img/calendar.svg";
 import filterIcon from "../img/filter.svg";
-
 import Button from "./button.js";
 import { create } from "./node.js";
+import Project from "./project.js";
+import Task from "./task.js";
 
 export default class {
   static render() {
     this.#renderSideBarButtons();
     this.#renderSideBarProfile();
+    this.#renderProjects();
   }
 
   static toggleSideBar() {
@@ -87,5 +89,16 @@ export default class {
       .build();
 
     body.append(sideBarButton, notificationButton);
+  }
+
+  static #renderProjects() {
+    const projectContainer = document.querySelector(".project-container");
+
+    projectContainer.append(
+      new Project("Default Project", [
+        new Task("Fix the car", "a", "a", "a"),
+        new Task("Clear the kitchen", "a", "a", "a"),
+      ]).intoNode(),
+    );
   }
 }
