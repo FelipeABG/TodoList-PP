@@ -152,27 +152,34 @@ html {
 
 .project {
   width: var(--buttons-width);
-  height: 10vh;
+  height: 14.5vh;
   flex-shrink: 0;
   gap: 3px;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .title-container {
-  flex: 1;
   box-sizing: border-box;
-  gap: 3px;
+  gap: 0px 3px;
   display: flex;
   padding-left: 3px;
   flex-direction: row;
   align-items: center;
 }
 
-.task-mini {
+.task-container {
   flex: 1;
+  overflow: scroll;
   display: flex;
-  gap: 3px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-mini {
+  display: flex;
+  gap: 5px;
   padding-left: 3px;
   flex-direction: row;
   align-items: center;
@@ -189,7 +196,7 @@ html {
 }
 
 .task-img {
-  width: 1.4rem;
+  width: 1.6rem;
 }
 
 .title-container p {

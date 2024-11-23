@@ -25,6 +25,7 @@ export default class {
     const sideBarButton = document.querySelector(".toggle-side-bar-button");
     const notificationButton = document.querySelector(".notification-button");
 
+    //Open side bar
     if (sidebar.style.width == "0%") {
       sidebar.style.width = "20%";
       main.style.width = "80%";
@@ -33,6 +34,7 @@ export default class {
       return;
     }
 
+    //Close side bar
     sidebar.style.width = "0%";
     main.style.width = "100%";
     sideBarButton.style.left = "2%";

@@ -22,7 +22,13 @@ export default class {
 
     return create("div")
       .class("project")
-      .child(projectTitle, ...this.#tasksToNode())
+      .child(
+        projectTitle,
+        create("div")
+          .class("task-container")
+          .child(...this.#tasksToNode())
+          .build(),
+      )
       .build();
   }
 
