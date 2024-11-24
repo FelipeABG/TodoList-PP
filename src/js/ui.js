@@ -19,6 +19,7 @@ export default class {
     this.#renderSideBarProfile();
     this.#renderProjects();
     this.#renderTopBarButtons();
+    this.#renderSections();
   }
 
   static toggleSideBar() {
@@ -104,6 +105,17 @@ export default class {
       .build();
 
     topbar.appendChild(newProjectButton);
+  }
+
+  static #renderSections() {
+    const sectionContainer = document.querySelector(".section-container");
+    const sections = ["today", "top-priority", "done"];
+
+    sections.forEach((section) => {
+      const sectionDiv = create("div").class("section", section).build();
+
+      sectionContainer.appendChild(sectionDiv);
+    });
   }
 
   static #renderProjects() {

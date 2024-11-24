@@ -9,9 +9,7 @@
   --dark-gray: #6b6967;
   --light-blue: #a9beda;
   --light-black: #2a2826;
-  --white: #f5f7f9;
-  --buttons-width: 97%;
-  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --white: #fefefe --buttons-width: 97%;
 }
 
 body,
@@ -232,21 +230,19 @@ html {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
+  padding: 20px;
   gap: 20px;
 }
 
 .section {
   flex: 1;
-  background-color: var(--white);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+  background-color: white;
 }
 
 .new-project-button {
   width: 30px;
   height: 30px;
-  background-color: var(--white);
+  background-color: white;
   border-radius: 100px;
   display: flex;
   align-items: center;
