@@ -30,7 +30,7 @@ html {
   box-sizing: border-box;
   width: 20%;
   height: 100%;
-  border-right: 0.5px solid var(--dark-blue);
+  box-shadow: var(--shadow);
   background-color: #f6f7f9;
   transition: 0.2s;
   overflow-x: hidden;
