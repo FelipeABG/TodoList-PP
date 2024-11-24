@@ -2,11 +2,12 @@ import sideBarIcon from "../img/siderbar.svg";
 import profileIcon from "../img/profile.svg";
 import profileArrow from "../img/downarrow.svg";
 import notificationIcon from "../img/notification.svg";
-import addIcon from "../img/plus.svg";
+import plusIcon from "../img/plus.svg";
 import searchIcon from "../img/search.svg";
 import inboxIcon from "../img/inbox.svg";
 import calendarIcon from "../img/calendar.svg";
 import filterIcon from "../img/filter.svg";
+import addIcon from "../img/add.svg";
 import Button from "./button.js";
 import { create } from "./node.js";
 import Project from "./project.js";
@@ -17,6 +18,7 @@ export default class {
     this.#renderSideBarButtons();
     this.#renderSideBarProfile();
     this.#renderProjects();
+    this.#renderTopBarButtons();
   }
 
   static toggleSideBar() {
@@ -64,7 +66,7 @@ export default class {
     const body = document.querySelector("body");
 
     const buttons = [
-      new Button("add-icon", "Add Task", addIcon),
+      new Button("add-icon", "Add Task", plusIcon),
       new Button("inbox-icon", "Inbox", inboxIcon),
       new Button("today-icon", "Today", calendarIcon),
       new Button("filter-icon", "Filter & Labels", filterIcon),
@@ -93,6 +95,17 @@ export default class {
     body.append(sideBarButton, notificationButton);
   }
 
+  static #renderTopBarButtons() {
+    const topbar = document.querySelector(".top-bar-container");
+
+    const newProjectButton = create("div")
+      .class("new-project-button")
+      .child(create("img").source(addIcon).build())
+      .build();
+
+    topbar.appendChild(newProjectButton);
+  }
+
   static #renderProjects() {
     const projectContainer = document.querySelector(".project-container");
 
@@ -100,6 +113,7 @@ export default class {
       new Project("Default Project", [
         new Task("Fix the car", "a", "a", "a"),
         new Task("Clear the kitchen", "a", "a", "a"),
+        new Task("Go to the Park", "a", "a", "a"),
       ]).intoNode(),
     );
   }

@@ -152,7 +152,8 @@ html {
 
 .project {
   width: var(--buttons-width);
-  height: 14.5vh;
+  min-height: 9vh;
+  max-height: 14vh;
   flex-shrink: 0;
   gap: 3px;
   display: flex;
@@ -209,4 +210,37 @@ html {
   width: 80%;
   height: 100%;
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar-container {
+  width: 100%;
+  height: 8.5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding-right: 25px;
+}
+
+.section-container {
+  width: 100%;
+  height: 92.5%;
+}
+
+.new-project-button {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms;
+}
+
+.new-project-button:hover {
+  transition: 200ms;
+  transform: scale(1.1);
 }
