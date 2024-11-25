@@ -8,10 +8,11 @@ import inboxIcon from "/src/img/inbox.svg";
 import calendarIcon from "/src/img/calendar.svg";
 import filterIcon from "/src/img/filter.svg";
 import addIcon from "/src/img/add.svg";
-import Button from "./components/button.js";
 import { create } from "../utils/node.js";
+import Button from "./components/button.js";
 import Project from "../entities/project.js";
 import Task from "../entities/task.js";
+import Section from "./components/section.js";
 
 export default class {
   static render() {
@@ -109,12 +110,14 @@ export default class {
 
   static #renderSections() {
     const sectionContainer = document.querySelector(".section-container");
-    const sections = ["today", "top-priority", "done"];
+    const sections = [
+      new Section("Today"),
+      new Section("Top Priority"),
+      new Section("Done"),
+    ];
 
     sections.forEach((section) => {
-      const sectionDiv = create("div").class("section", section).build();
-
-      sectionContainer.appendChild(sectionDiv);
+      sectionContainer.appendChild(section.intoNode());
     });
   }
 

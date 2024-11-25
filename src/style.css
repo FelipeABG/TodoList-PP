@@ -241,6 +241,16 @@ html {
   background-color: var(--white);
   border-radius: 20px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  box-sizing: border-box;
+}
+
+.section-tittle {
+  height: 6%;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .new-project-button {
