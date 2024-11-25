@@ -1,17 +1,17 @@
-import sideBarIcon from "../img/siderbar.svg";
-import profileIcon from "../img/profile.svg";
-import profileArrow from "../img/downarrow.svg";
-import notificationIcon from "../img/notification.svg";
-import plusIcon from "../img/plus.svg";
-import searchIcon from "../img/search.svg";
-import inboxIcon from "../img/inbox.svg";
-import calendarIcon from "../img/calendar.svg";
-import filterIcon from "../img/filter.svg";
-import addIcon from "../img/add.svg";
-import Button from "../button.js";
-import { create } from "../node.js";
-import Project from "../project.js";
-import Task from "../task.js";
+import sideBarIcon from "/src/img/sidebar.svg";
+import profileIcon from "/src/img/profile.svg";
+import profileArrow from "/src/img/downarrow.svg";
+import notificationIcon from "/src/img/notification.svg";
+import plusIcon from "/src/img/plus.svg";
+import searchIcon from "/src/img/search.svg";
+import inboxIcon from "/src/img/inbox.svg";
+import calendarIcon from "/src/img/calendar.svg";
+import filterIcon from "/src/img/filter.svg";
+import addIcon from "/src/img/add.svg";
+import Button from "./components/button.js";
+import { create } from "../utils/node.js";
+import Project from "../entities/project.js";
+import Task from "../entities/task.js";
 
 export default class {
   static render() {
@@ -75,7 +75,7 @@ export default class {
     ];
 
     buttons.forEach((button) => {
-      buttonContainer.appendChild(button.intoDiv());
+      buttonContainer.appendChild(button.intoNode());
     });
 
     //The add task button has different styles

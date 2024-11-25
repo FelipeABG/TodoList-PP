@@ -1,4 +1,4 @@
-import { create } from "../../node.js";
+import { create } from "/src/js/utils/node.js";
 
 export default class {
   constructor(cls, content, source) {
@@ -7,7 +7,7 @@ export default class {
     this.src = source;
   }
 
-  intoDiv() {
+  intoNode() {
     return create("div")
       .class("side-bar-button")
       .child(

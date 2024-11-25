@@ -1,5 +1,5 @@
-import { create } from "../node.js";
-import circleIcon from "../img/circle.svg";
+import { create } from "../utils/node.js";
+import circleIcon from "/src/img/circle.svg";
 
 export default class {
   constructor(name, tasks) {

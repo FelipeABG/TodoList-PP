@@ -1,4 +1,4 @@
-import UI from "./ui";
+import UI from "/src/js/ui/ui.js";
 
 export default class {
   static build() {

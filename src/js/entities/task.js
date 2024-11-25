@@ -1,5 +1,5 @@
-import { create } from "../node.js";
-import hashtagIcon from "../img/hashtag.svg";
+import { create } from "../utils/node.js";
+import hashtagIcon from "/src/img/hashtag.svg";
 
 export default class {
   constructor(title, description, dueDate, priority) {
