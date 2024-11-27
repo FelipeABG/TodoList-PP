@@ -268,3 +268,17 @@ html {
   transition: 200ms;
   transform: rotate(90deg);
 }
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.add-task-dialog,
+.new-project-dialog {
+  width: 30vw;
+  height: 30vh;
+  outline: none;
+  border: 2px solid #d8d7d6;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
