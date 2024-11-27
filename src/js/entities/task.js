@@ -1,5 +1,5 @@
 import { create } from "../utils/node.js";
-import hashtagIcon from "/src/img/hashtag.svg";
+import checkIcon from "/src/img/check.svg";
 
 export default class {
   constructor(title, description, dueDate, priority) {
@@ -28,7 +28,7 @@ export default class {
     return create("div")
       .class("task-mini")
       .child(
-        create("img").class("task-img").source(hashtagIcon).build(),
+        create("img").class("task-img").source(checkIcon).build(),
         create("p").content(this.title).build(),
       )
       .build();
