@@ -1,4 +1,5 @@
 import { create } from "../utils/node.js";
+import pencilIcon from "/src/img/pencil.svg";
 
 export default class {
   constructor(name, tasks) {
@@ -9,7 +10,10 @@ export default class {
   intoNode() {
     const projectTitle = create("div")
       .class("title-container")
-      .child(create("p").content(this.name).build())
+      .child(
+        create("p").content(this.name).build(),
+        create("img").source(pencilIcon).class("edit-icon").build(),
+      )
       .build();
 
     if (this.tasks.length == 0) {

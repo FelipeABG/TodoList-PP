@@ -165,11 +165,22 @@ html {
 
 .title-container {
   box-sizing: border-box;
+  justify-content: space-between;
   gap: 0px 3px;
   display: flex;
-  padding-left: 3px;
+  padding: 0px 3px;
   flex-direction: row;
   align-items: center;
+}
+
+.edit-icon {
+  padding: 2px;
+  width: 1.4rem;
+  border-radius: 100px;
+}
+
+.edit-icon:hover {
+  background-color: #d3d3d3;
 }
 
 .task-container {
