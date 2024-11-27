@@ -44,6 +44,15 @@ function get(tag) {
       return this;
     },
 
+    keyPressed(key, func) {
+      this.element.addEventListener("keydown", (e) => {
+        if (e.key == key) {
+          func();
+        }
+      });
+      return this;
+    },
+
     content(str) {
       this.element.innerText = str;
       return this;

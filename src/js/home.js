@@ -5,6 +5,7 @@ export default class {
   static build() {
     this.#addSideBarAccess();
     this.#addModalAccess();
+    this.#addKeyBoardShortCuts();
   }
 
   static #addSideBarAccess() {
@@ -14,5 +15,9 @@ export default class {
   static #addModalAccess() {
     get(".add-task-button").click(UI.openTaskModal);
     get(".new-project-button").click(UI.openProjectModal);
+  }
+
+  static #addKeyBoardShortCuts() {
+    get("body").keyPressed("Tab", UI.toggleSideBar);
   }
 }
