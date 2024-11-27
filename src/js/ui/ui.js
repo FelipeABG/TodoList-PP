@@ -23,6 +23,14 @@ export default class {
     this.#renderSections();
   }
 
+  static openTaskModal() {
+    document.querySelector(".add-task-dialog").showModal();
+  }
+
+  static openProjectModal() {
+    document.querySelector(".new-project-dialog").showModal();
+  }
+
   static toggleSideBar() {
     const sidebar = document.querySelector(".side-bar-container");
     const main = document.querySelector(".main-container");
@@ -80,9 +88,9 @@ export default class {
     });
 
     //The add task button has different styles
-    document
-      .querySelector(".side-bar-button")
-      .lastChild.classList.add("add-text");
+    const addTaskButton = document.querySelector(".side-bar-button");
+    addTaskButton.classList.add("add-task-button");
+    addTaskButton.lastChild.classList.add("add-text");
 
     //Adding access to the side bar
     const sideBarButton = create("img")

@@ -10,7 +10,7 @@ export default class {
       .class("section", this.tittle.toLowerCase().replace(" ", "-"))
       .child(
         create("div").class("section-tittle").content(this.tittle).build(),
-        create("div").class("section-todo-contianer").build(),
+        create("div").class("section-todo-container").build(),
       )
       .build();
   }
