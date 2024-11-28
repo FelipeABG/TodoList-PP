@@ -9,9 +9,11 @@
   --dark-gray: #6b6967;
   --light-blue: #a9beda;
   --light-black: #2a2826;
+  --light-gray: #d8d7d6;
   --white: #f5f7f9;
   --buttons-width: 97%;
   --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --modal-padding: 20px;
 }
 
 body,
@@ -284,7 +286,7 @@ dialog::backdrop {
 .add-task-dialog,
 .new-project-dialog {
   outline: none;
-  border: 2px solid #d8d7d6;
+  border: 2px solid var(--light-gray);
   box-shadow: var(--shadow);
   border-radius: 10px;
   padding: 0;
@@ -292,7 +294,7 @@ dialog::backdrop {
 
 .add-task-dialog {
   width: 35vw;
-  height: 25vh;
+  height: 23vh;
 }
 
 .add-task-container {
@@ -301,19 +303,13 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .task-input-container {
   flex: 1;
-}
-
-.task-buttons-container {
-  flex: 1;
-  border-bottom: 1px solid #d8d7d6;
-}
-
-.task-submit-container {
-  flex: 1;
+  box-sizing: border-box;
+  padding-left: var(--modal-padding);
 }
 
 .task-input {
@@ -323,4 +319,87 @@ dialog::backdrop {
   text-decoration: none;
   outline: none;
   font-size: 1.5rem;
+}
+
+.task-buttons-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: var(--modal-padding);
+  padding-bottom: var(--modal-padding);
+  flex: 1;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 5px;
+}
+
+.due-date-button,
+.priority-button,
+.description-button {
+  cursor: default;
+  height: 35%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+}
+
+.due-date-button:hover,
+.priority-button:hover,
+.description-button:hover {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(9%) saturate(4446%)
+    hue-rotate(200deg) brightness(104%) contrast(96%);
+}
+
+.due-date-button p,
+.priority-button p,
+.description-button p,
+.project-button p {
+  margin: 0;
+  padding: 0;
+  color: var(--dark-gray);
+}
+
+.task-submit-container {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: var(--modal-padding);
+  padding-right: var(--modal-padding);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-button {
+  cursor: default;
+  height: 35%;
+  display: flex;
+  gap: 3px;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  padding-right: 15px;
+}
+
+.project-button:hover {
+  background-color: var(--light-gray);
+}
+
+.submit-button {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dark-blue);
+  width: 20%;
+  height: 50%;
+  color: white;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #505690;
 }

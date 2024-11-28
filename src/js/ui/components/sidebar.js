@@ -75,11 +75,16 @@ export default class {
     const body = document.querySelector("body");
 
     const buttons = [
-      new Button("add-icon", "Add Task", plusIcon),
-      new Button("inbox-icon", "Inbox", inboxIcon),
-      new Button("today-icon", "Today", calendarIcon),
-      new Button("filter-icon", "Filter & Labels", filterIcon),
-      new Button("search-icon", "Search", searchIcon),
+      new Button("side-bar-button", "add-icon", "Add Task", plusIcon),
+      new Button("side-bar-button", "inbox-icon", "Inbox", inboxIcon),
+      new Button("side-bar-button", "today-icon", "Today", calendarIcon),
+      new Button(
+        "side-bar-button",
+        "filter-icon",
+        "Filter & Labels",
+        filterIcon,
+      ),
+      new Button("side-bar-button", "search-icon", "Search", searchIcon),
     ];
 
     buttons.forEach((button) => {
