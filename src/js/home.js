@@ -1,4 +1,5 @@
-import UI from "/src/js/ui/ui.js";
+import Modal from "/src/js/ui/components/modal";
+import SideBar from "/src/js/ui/components/sidebar";
 import { get } from "./utils/fluent.js";
 
 export default class {
@@ -9,13 +10,13 @@ export default class {
 
   static #addSideBarAccess() {
     //Ui button
-    get(".toggle-side-bar-button").click(UI.toggleSideBar);
+    get(".toggle-side-bar-button").click(SideBar.toggleSideBar);
     //Key bind
-    get("body").keyPressed("Tab", UI.toggleSideBar);
+    get("body").keyPressed("Tab", SideBar.toggleSideBar);
   }
 
   static #addModalAccess() {
-    get(".add-task-button").click(UI.openTaskModal);
-    get(".new-project-button").click(UI.openProjectModal);
+    get(".add-task-button").click(Modal.openTaskModal);
+    get(".new-project-button").click(Modal.openProjectModal);
   }
 }
