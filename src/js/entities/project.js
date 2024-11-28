@@ -1,4 +1,4 @@
-import { create } from "../utils/node.js";
+import { create } from "../utils/fluent.js";
 import pencilIcon from "/src/img/pencil.svg";
 
 export default class {

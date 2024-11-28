@@ -8,7 +8,7 @@ import inboxIcon from "/src/img/inbox.svg";
 import calendarIcon from "/src/img/calendar.svg";
 import filterIcon from "/src/img/filter.svg";
 import addIcon from "/src/img/add.svg";
-import { create } from "../utils/node.js";
+import { create } from "../utils/fluent.js";
 import Button from "./components/button.js";
 import Project from "../entities/project.js";
 import Task from "../entities/task.js";

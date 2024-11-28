@@ -1,4 +1,4 @@
-import { create } from "../utils/node.js";
+import { create } from "../utils/fluent.js";
 import checkIcon from "/src/img/check.svg";
 
 export default class {
@@ -7,6 +7,7 @@ export default class {
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+    this.isDone = false;
   }
 
   intoNode() {

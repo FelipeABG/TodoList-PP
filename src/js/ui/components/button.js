@@ -1,4 +1,4 @@
-import { create } from "/src/js/utils/node.js";
+import { create } from "/src/js/utils/fluent.js";
 
 export default class {
   constructor(cls, content, source) {
