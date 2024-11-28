@@ -7,6 +7,11 @@ function create(tag) {
       return this;
     },
 
+    placeholder(str) {
+      this.element.placeholder = str;
+      return this;
+    },
+
     content(str) {
       this.element.innerText = str;
       return this;
@@ -34,6 +39,11 @@ function get(tag) {
 
     class(...classes) {
       this.element.classList.add(...classes);
+      return this;
+    },
+
+    placeholder(str) {
+      this.element.placeholder = str;
       return this;
     },
 

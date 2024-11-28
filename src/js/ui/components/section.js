@@ -14,11 +14,11 @@ export default class {
     ];
 
     sections.forEach((section) => {
-      sectionContainer.appendChild(section.intoNode());
+      sectionContainer.appendChild(section.#intoNode());
     });
   }
 
-  intoNode() {
+  #intoNode() {
     return create("div")
       .class("section", this.tittle.toLowerCase().replace(" ", "-"))
       .child(
