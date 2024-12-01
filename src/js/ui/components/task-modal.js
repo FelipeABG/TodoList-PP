@@ -21,6 +21,13 @@ export default class {
     document.querySelector(".add-task-dialog").showModal();
   }
 
+  static openCalendar() {
+    get(".add-task-dialog").toggle("add-task-dialog-expanded");
+    get(".buttons-content-container").toggle(
+      "buttons-content-container-expanded",
+    );
+  }
+
   static #createInputContainer() {
     return create("div")
       .class("task-input-container")

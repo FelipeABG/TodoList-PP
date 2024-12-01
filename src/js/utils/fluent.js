@@ -52,6 +52,16 @@ function get(tag) {
       return this;
     },
 
+    remove(cls) {
+      this.element.classList.remove(cls);
+      return this;
+    },
+
+    toggle(cls) {
+      this.element.classList.toggle(cls);
+      return this;
+    },
+
     placeholder(str) {
       this.element.placeholder = str;
       return this;
@@ -80,6 +90,11 @@ function get(tag) {
           func();
         }
       });
+      return this;
+    },
+
+    height(value) {
+      this.element.style.height = value;
       return this;
     },
 
