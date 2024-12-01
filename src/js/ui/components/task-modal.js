@@ -7,21 +7,31 @@ import arrowIcon from "/src/img/downarrow.svg";
 
 export default class {
   static render() {
-    this.#renderTaskModal();
-    this.#renderProjectModal();
-  }
-
-  static #renderTaskModal() {
     const container = get(".add-task-container");
 
-    const inputContainer = create("div")
+    container.child(
+      this.#createInputContainer(),
+      this.#createButtonsContainer(),
+      this.#createButtonsContentContainer(),
+      this.#createSubmitContainer(),
+    );
+  }
+
+  static openTaskModal() {
+    document.querySelector(".add-task-dialog").showModal();
+  }
+
+  static #createInputContainer() {
+    return create("div")
       .class("task-input-container")
       .child(
         create("input").class("task-input").placeholder("Task name").build(),
       )
       .build();
+  }
 
-    const buttonsContainer = create("div")
+  static #createButtonsContainer() {
+    return create("div")
       .class("task-buttons-container")
       .child(
         new Button(
@@ -44,8 +54,14 @@ export default class {
         ).intoNode(),
       )
       .build();
+  }
 
-    const submitContainer = create("div")
+  static #createButtonsContentContainer() {
+    return create("div").class("buttons-content-container").build();
+  }
+
+  static #createSubmitContainer() {
+    return create("div")
       .class("task-submit-container")
       .child(
         new Button(
@@ -54,20 +70,12 @@ export default class {
           "Project",
           arrowIcon,
         ).intoNode(),
-        create("input").type("submit").class("submit-button").build(),
+        create("input")
+          .type("submit")
+          .class("submit-button")
+          .value("Create Task")
+          .build(),
       )
       .build();
-
-    container.child(inputContainer, buttonsContainer, submitContainer);
-  }
-
-  static #renderProjectModal() {}
-
-  static openTaskModal() {
-    document.querySelector(".add-task-dialog").showModal();
-  }
-
-  static openProjectModal() {
-    document.querySelector(".new-project-dialog").showModal();
   }
 }

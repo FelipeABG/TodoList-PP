@@ -12,6 +12,11 @@ function create(tag) {
       return this;
     },
 
+    value(str) {
+      this.element.value = str;
+      return this;
+    },
+
     type(str) {
       this.element.type = str;
       return this;
@@ -49,6 +54,11 @@ function get(tag) {
 
     placeholder(str) {
       this.element.placeholder = str;
+      return this;
+    },
+
+    value(str) {
+      this.element.value = str;
       return this;
     },
 
