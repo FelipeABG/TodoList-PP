@@ -15,7 +15,7 @@ export default class {
   static addInteraction() {
     this.#addSideBarAccess();
     this.#addModalAccess();
-    this.#addTaskModalButtonContentAccess();
+    this.#addTaskButtonsContentAccess();
   }
 
   static #addSideBarAccess() {
@@ -26,7 +26,9 @@ export default class {
     get(".add-task-button").click(TaskModal.openTaskModal);
   }
 
-  static #addTaskModalButtonContentAccess() {
+  static #addTaskButtonsContentAccess() {
     get(".due-date-button").click(TaskModal.openCalendar);
+    get(".priority-button").click(TaskModal.openPriorities);
+    get(".description-button").click(TaskModal.openDescription);
   }
 }

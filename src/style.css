@@ -373,12 +373,15 @@ dialog::backdrop {
 .buttons-content-container {
   height: 0;
   transition: 200ms;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .buttons-content-container-expanded {
   height: 20vh;
   transition: 200ms;
-  border-bottom: 0.5px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+  padding: var(--modal-padding);
 }
 
 .task-submit-container {
@@ -412,7 +415,7 @@ dialog::backdrop {
   border: none;
   border-radius: 5px;
   background-color: var(--dark-blue);
-  width: 20%;
+  text-align: center;
   height: 50%;
   color: white;
   font-size: 1rem;
@@ -420,4 +423,55 @@ dialog::backdrop {
 
 .submit-button:hover {
   background-color: #505690;
+}
+
+.description-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
+  padding: 7px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  font-family: "Inter";
+}
+
+.priorities-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
+  padding: 7px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.radio-container {
+  width: 10vw;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  border-radius: 10px;
+  color: var(--dark-gray);
+  border: 1px solid var(--light-gray);
+}
+
+.Low:hover {
+  border: 1px solid #01a96b;
+  color: #01a96b;
+}
+
+.Medium:hover {
+  border: 1px solid #e69b00;
+  color: #e69b00;
+}
+
+.High:hover {
+  border: 1px solid #d61339;
+  color: #d61339;
 }

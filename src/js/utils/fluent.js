@@ -22,6 +22,21 @@ function create(tag) {
       return this;
     },
 
+    name(str) {
+      this.element.name = str;
+      return this;
+    },
+
+    id(str) {
+      this.element.id = str;
+      return this;
+    },
+
+    for(id) {
+      this.element.htmlFor = id;
+      return this;
+    },
+
     content(str) {
       this.element.innerText = str;
       return this;
@@ -81,6 +96,11 @@ function get(tag) {
       this.element.addEventListener("click", () => {
         func();
       });
+      return this;
+    },
+
+    clear() {
+      this.element.innerHTML = "";
       return this;
     },
 

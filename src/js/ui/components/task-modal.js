@@ -22,10 +22,49 @@ export default class {
   }
 
   static openCalendar() {
-    get(".add-task-dialog").toggle("add-task-dialog-expanded");
-    get(".buttons-content-container").toggle(
-      "buttons-content-container-expanded",
-    );
+    toggleContent();
+
+    get(".buttons-content-container")
+      .clear()
+      .child(create("div").content("Calendar").build());
+  }
+
+  static openPriorities() {
+    toggleContent();
+
+    let radios = ["Low", "Medium", "High"];
+    let radioDivs = [];
+
+    radios.forEach((radio) => {
+      radioDivs.push(
+        create("div")
+          .class("radio-container", radio)
+          .child(
+            create("input").type("radio").id(radio).name("priority").build(),
+            create("label").for(radio).content(radio).build(),
+          )
+          .build(),
+      );
+    });
+
+    const content = create("div")
+      .class("priorities-container")
+      .child(...radioDivs)
+      .build();
+
+    get(".buttons-content-container").clear().child(content);
+  }
+
+  static openDescription() {
+    toggleContent();
+    get(".buttons-content-container")
+      .clear()
+      .child(
+        create("textarea")
+          .class("description-input")
+          .placeholder("Description")
+          .build(),
+      );
   }
 
   static #createInputContainer() {
@@ -85,4 +124,11 @@ export default class {
       )
       .build();
   }
+}
+
+function toggleContent() {
+  get(".add-task-dialog").toggle("add-task-dialog-expanded");
+  get(".buttons-content-container").toggle(
+    "buttons-content-container-expanded",
+  );
 }
