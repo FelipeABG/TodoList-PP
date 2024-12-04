@@ -298,11 +298,6 @@ dialog::backdrop {
   transition: 200ms;
 }
 
-.add-task-dialog-expanded {
-  height: 40vh;
-  transition: 200ms;
-}
-
 .add-task-container {
   transition: 200ms;
   width: 100%;
@@ -377,13 +372,6 @@ dialog::backdrop {
   box-sizing: border-box;
 }
 
-.buttons-content-container-expanded {
-  height: 20vh;
-  transition: 200ms;
-  border-bottom: 1px solid var(--light-gray);
-  padding: var(--modal-padding);
-}
-
 .task-submit-container {
   flex: 1;
   box-sizing: border-box;
@@ -428,8 +416,8 @@ dialog::backdrop {
 .description-input {
   box-sizing: border-box;
   width: 100%;
-  outline: none;
   height: 100%;
+  outline: none;
   font-size: 1.4rem;
   padding: 7px;
   border: 1px solid var(--light-gray);

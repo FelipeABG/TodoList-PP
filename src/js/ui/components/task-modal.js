@@ -5,6 +5,7 @@ import dueDateIcon from "/src/img/duedate.svg";
 import textIcon from "/src/img/text.svg";
 import arrowIcon from "/src/img/downarrow.svg";
 import DatePicker from "air-datepicker";
+import eng from "air-datepicker/locale/en";
 
 export default class {
   static render() {
@@ -23,12 +24,14 @@ export default class {
   }
 
   static openCalendar() {
-    toggleContent("60vh", "40vh");
+    toggleContent("55vh", "30vh");
 
     get(".buttons-content-container")
       .clear()
       .child(create("div").class("calendar-container").build());
-    new DatePicker(".calendar-container", []);
+    new DatePicker(".calendar-container", {
+      locale: eng,
+    });
   }
 
   static openPriorities() {
@@ -58,7 +61,7 @@ export default class {
   }
 
   static openDescription() {
-    toggleContent("40vh", "50vh");
+    toggleContent("45vh", "20vh");
     get(".buttons-content-container")
       .clear()
       .child(
@@ -136,10 +139,12 @@ function toggleContent(modalHeight, contentHeight) {
     contentDiv.style.height = "0%";
     modalDiv.style.height = "23vh";
     contentDiv.style.borderBottom = "";
+    contentDiv.style.padding = "";
     return;
   }
 
   modalDiv.style.height = modalHeight;
+  contentDiv.style.padding = "var(--modal-padding)";
   contentDiv.style.height = contentHeight;
   contentDiv.style.borderBottom = "1px solid var(--light-gray)";
 }
