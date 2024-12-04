@@ -72,11 +72,6 @@ function get(tag) {
       return this;
     },
 
-    toggle(cls) {
-      this.element.classList.toggle(cls);
-      return this;
-    },
-
     placeholder(str) {
       this.element.placeholder = str;
       return this;
@@ -110,6 +105,16 @@ function get(tag) {
           func();
         }
       });
+      return this;
+    },
+
+    show() {
+      this.element.style.display = "none";
+      return this;
+    },
+
+    hide() {
+      this.element.style.display = "flex";
       return this;
     },
 

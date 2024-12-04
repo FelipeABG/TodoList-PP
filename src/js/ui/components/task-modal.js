@@ -17,6 +17,10 @@ export default class {
       this.#createButtonsContentContainer(),
       this.#createSubmitContainer(),
     );
+
+    this.#renderPriorities();
+    this.#renderCalendar();
+    this.#renderDescription();
   }
 
   static openTaskModal() {
@@ -26,17 +30,42 @@ export default class {
   static openCalendar() {
     toggleContent("55vh", "30vh");
 
-    get(".buttons-content-container")
-      .clear()
-      .child(create("div").class("calendar-container").build());
-    new DatePicker(".calendar-container", {
-      locale: eng,
+    toggleDisplay({
+      priorities: "none",
+      calendar: "flex",
+      description: "none",
     });
   }
 
   static openPriorities() {
     toggleContent("35vh", "10vh");
+    toggleDisplay({
+      priorities: "flex",
+      calendar: "none",
+      description: "none",
+    });
+  }
 
+  static openDescription() {
+    toggleContent("45vh", "20vh");
+    toggleDisplay({
+      priorities: "none",
+      calendar: "none",
+      description: "flex",
+    });
+  }
+
+  static #renderCalendar() {
+    get(".buttons-content-container").child(
+      create("div").class("calendar-container").build(),
+    );
+
+    new DatePicker(".calendar-container", {
+      locale: eng,
+    });
+  }
+
+  static #renderPriorities() {
     let radios = ["Low", "Medium", "High"];
     let radioDivs = [];
 
@@ -57,19 +86,16 @@ export default class {
       .child(...radioDivs)
       .build();
 
-    get(".buttons-content-container").clear().child(content);
+    get(".buttons-content-container").child(content);
   }
 
-  static openDescription() {
-    toggleContent("45vh", "20vh");
-    get(".buttons-content-container")
-      .clear()
-      .child(
-        create("textarea")
-          .class("description-input")
-          .placeholder("Description")
-          .build(),
-      );
+  static #renderDescription() {
+    get(".buttons-content-container").child(
+      create("textarea")
+        .class("description-input")
+        .placeholder("Description")
+        .build(),
+    );
   }
 
   static #createInputContainer() {
@@ -129,6 +155,13 @@ export default class {
       )
       .build();
   }
+}
+
+function toggleDisplay(divs) {
+  document.querySelector(".calendar-container").style.display = divs.calendar;
+  document.querySelector(".priorities-container").style.display =
+    divs.priorities;
+  document.querySelector(".description-input").style.display = divs.description;
 }
 
 function toggleContent(modalHeight, contentHeight) {
