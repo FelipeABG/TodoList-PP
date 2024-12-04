@@ -371,7 +371,7 @@ dialog::backdrop {
 }
 
 .buttons-content-container {
-  height: 0;
+  height: 0%;
   transition: 200ms;
   overflow: hidden;
   box-sizing: border-box;
@@ -445,7 +445,7 @@ dialog::backdrop {
   padding: 7px;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -475,4 +475,13 @@ dialog::backdrop {
 .High:hover {
   border: 1px solid #d61339;
   color: #d61339;
+}
+
+.calendar-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

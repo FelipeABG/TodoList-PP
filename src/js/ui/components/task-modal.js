@@ -4,6 +4,7 @@ import flagIcon from "/src/img/flag.svg";
 import dueDateIcon from "/src/img/duedate.svg";
 import textIcon from "/src/img/text.svg";
 import arrowIcon from "/src/img/downarrow.svg";
+import DatePicker from "air-datepicker";
 
 export default class {
   static render() {
@@ -22,15 +23,16 @@ export default class {
   }
 
   static openCalendar() {
-    toggleContent();
+    toggleContent("60vh", "40vh");
 
     get(".buttons-content-container")
       .clear()
-      .child(create("div").content("Calendar").build());
+      .child(create("div").class("calendar-container").build());
+    new DatePicker(".calendar-container", []);
   }
 
   static openPriorities() {
-    toggleContent();
+    toggleContent("35vh", "10vh");
 
     let radios = ["Low", "Medium", "High"];
     let radioDivs = [];
@@ -56,7 +58,7 @@ export default class {
   }
 
   static openDescription() {
-    toggleContent();
+    toggleContent("40vh", "50vh");
     get(".buttons-content-container")
       .clear()
       .child(
@@ -126,9 +128,18 @@ export default class {
   }
 }
 
-function toggleContent() {
-  get(".add-task-dialog").toggle("add-task-dialog-expanded");
-  get(".buttons-content-container").toggle(
-    "buttons-content-container-expanded",
-  );
+function toggleContent(modalHeight, contentHeight) {
+  const modalDiv = document.querySelector(".add-task-dialog");
+  const contentDiv = document.querySelector(".buttons-content-container");
+
+  if (contentDiv.style.height == contentHeight) {
+    contentDiv.style.height = "0%";
+    modalDiv.style.height = "23vh";
+    contentDiv.style.borderBottom = "";
+    return;
+  }
+
+  modalDiv.style.height = modalHeight;
+  contentDiv.style.height = contentHeight;
+  contentDiv.style.borderBottom = "1px solid var(--light-gray)";
 }
