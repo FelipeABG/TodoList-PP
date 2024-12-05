@@ -295,6 +295,65 @@ dialog::backdrop {
   transition: 200ms;
 }
 
+.add-task-dialog {
+  height: 23vh;
+}
+
+.new-project-dialog {
+  height: 15vh;
+}
+
+.new-project-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.project-input-container {
+  width: 100%;
+  border-bottom: 1px solid var(--light-gray);
+  height: 60%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-button-container {
+  flex: 1;
+  box-sizing: border-box;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+  justify-content: flex-end;
+}
+
+.project-input {
+  width: 95%;
+  height: 95%;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+}
+
+.project-submit {
+  height: 4vh;
+  width: 6vw;
+  background-color: var(--dark-blue);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.project-submit:hover {
+  background-color: #505690;
+}
+
 .add-task-container {
   transition: 200ms;
   width: 100%;
