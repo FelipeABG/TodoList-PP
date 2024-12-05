@@ -3,12 +3,15 @@ import { get, create } from "/src/js/utils/fluent";
 export default class {
   static render() {
     get(".new-project-container").child(
-      create("div").class("project-input-container").build(),
-      create("div").class("project-button-container").build(),
+      create("div")
+        .class("project-input-container")
+        .child(this.#renderInput())
+        .build(),
+      create("div")
+        .class("project-button-container")
+        .child(this.#renderButton())
+        .build(),
     );
-
-    get(".project-input-container").child(this.#renderInput());
-    get(".project-button-container").child(this.#renderButton());
   }
 
   static openProjectModal() {
