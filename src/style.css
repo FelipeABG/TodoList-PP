@@ -290,9 +290,6 @@ dialog::backdrop {
   box-shadow: var(--shadow);
   border-radius: 10px;
   padding: 0;
-}
-
-.add-task-dialog {
   width: 35vw;
   height: 23vh;
   transition: 200ms;
@@ -450,17 +447,17 @@ dialog::backdrop {
   border: 1px solid var(--light-gray);
 }
 
-.Low:hover {
+.low:hover {
   border: 1px solid #01a96b;
   color: #01a96b;
 }
 
-.Medium:hover {
+.medium:hover {
   border: 1px solid #e69b00;
   color: #e69b00;
 }
 
-.High:hover {
+.high:hover {
   border: 1px solid #d61339;
   color: #d61339;
 }

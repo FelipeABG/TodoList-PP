@@ -72,9 +72,14 @@ export default class {
     radios.forEach((radio) => {
       radioDivs.push(
         create("div")
-          .class("radio-container", radio)
+          .class("radio-container", radio.toLowerCase())
           .child(
-            create("input").type("radio").id(radio).name("priority").build(),
+            create("input")
+              .type("radio")
+              .id(radio)
+              .value(radio.toLowerCase())
+              .name("priority")
+              .build(),
             create("label").for(radio).content(radio).build(),
           )
           .build(),

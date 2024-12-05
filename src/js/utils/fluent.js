@@ -108,6 +108,11 @@ function get(tag) {
       return this;
     },
 
+    value(str) {
+      this.element.value = str;
+      return this;
+    },
+
     show() {
       this.element.style.display = "none";
       return this;
